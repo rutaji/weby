@@ -4,7 +4,17 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oběšenec</title>
+</head>
+<body>
+    @for (int y = 1; y != Model.Servisak.pocetpismen; y++)
+    {
+        <span>-</span>
+    }
+    <a asp-page="/Index" asp-page-handler="Kamen" asp-route-id=š> zde pro š</a>
+    <a asp-page="/Index" asp-page-handler="Kamen" asp-route-id=e> zde pro e</a>
+</body>
+</html>
