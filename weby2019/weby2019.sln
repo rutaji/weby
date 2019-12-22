@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weby2019", "weby2019\weby2019.csproj", "{AC5808A9-D6F5-4FFC-9CD8-2AB12B8AB4E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC5808A9-D6F5-4FFC-9CD8-2AB12B8AB4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5808A9-D6F5-4FFC-9CD8-2AB12B8AB4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5808A9-D6F5-4FFC-9CD8-2AB12B8AB4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5808A9-D6F5-4FFC-9CD8-2AB12B8AB4E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {568F795C-D76D-4C59-8BC9-26D020DB12B4}
+	EndGlobalSection
+EndGlobal
