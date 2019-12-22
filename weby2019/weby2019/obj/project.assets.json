@@ -12077,11 +12077,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\všichni\\Source\\Repos\\weby\\weby2019\\weby2019\\weby2019.csproj",
+      "projectUniqueName": "C:\\Users\\všichni\\Source\\Repos\\weby2\\weby2019\\weby2019\\weby2019.csproj",
       "projectName": "weby2019",
-      "projectPath": "C:\\Users\\všichni\\Source\\Repos\\weby\\weby2019\\weby2019\\weby2019.csproj",
+      "projectPath": "C:\\Users\\všichni\\Source\\Repos\\weby2\\weby2019\\weby2019\\weby2019.csproj",
       "packagesPath": "C:\\Users\\všichni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\všichni\\Source\\Repos\\weby\\weby2019\\weby2019\\obj\\",
+      "outputPath": "C:\\Users\\všichni\\Source\\Repos\\weby2\\weby2019\\weby2019\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

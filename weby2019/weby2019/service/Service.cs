@@ -22,6 +22,7 @@ namespace weby2019.service
         }
         public void Kontrola(string pismenko)
         {
+
             for( int i = 1; i <= pocetpismen; i++ )
             {
                 if( pismenko == hadane[i])

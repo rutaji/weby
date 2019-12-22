@@ -14,6 +14,7 @@ namespace weby2019.Pages
 
         public void OnGetKamen(string s)
         {
+            Servisak.Start();
             Servisak.Kontrola(s);
 
         }
