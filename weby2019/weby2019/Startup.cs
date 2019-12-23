@@ -32,7 +32,7 @@ namespace weby2019
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddScoped<Service>();
+            services.AddSingleton<Service>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
