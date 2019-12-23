@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using weby2019.service;
+using weby2019.data;
 
 namespace weby2019.Pages
 {
@@ -12,11 +13,12 @@ namespace weby2019.Pages
     {
         public Service Servisak { get; set; }
 
+        public  lednička dice { get; set; }
+
         public void OnGetKamen(string s)
         {
-            Servisak.Start();
             Servisak.Kontrola(s);
-
+            dice = Servisak.vem();
         }
 
         public IndexModel(Service servisak)
@@ -26,6 +28,7 @@ namespace weby2019.Pages
         public void OnGet()
         {
             Servisak.Start();
+            dice = Servisak.vem();
         }
 
     }
