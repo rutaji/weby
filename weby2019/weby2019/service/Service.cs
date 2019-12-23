@@ -12,14 +12,12 @@ namespace weby2019.service
         public lednička dice = new lednička();
         public void Start()//TODO tady vytáhnuto to slovo z databáze
         {
-            if ( dice.hadane == dice.uhodnute | dice.hadane[1] == null)
+           /* if ( dice.hadane == dice.uhodnute | dice.hadane[1] == null)
             {
-                string input = "šiškasuper";//todo vem z databaze 
-                dice.hadane = Regex.Split(input, string.Empty);
-                dice.pocetpismen = (dice.hadane.Length-1);
-            }
+                
+            }*/
         }
-        public void Kontrola(string pismenko)
+        public void  Kontrola(string pismenko)
         {
 
             for( int i = 1; i <= dice.pocetpismen; i++ )
@@ -29,6 +27,7 @@ namespace weby2019.service
                     dice.uhodnute[i] = pismenko;
                 }
             }
+           // return dice;
         }
         public lednička vem()
         {

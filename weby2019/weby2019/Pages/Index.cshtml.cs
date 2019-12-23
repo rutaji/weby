@@ -17,8 +17,10 @@ namespace weby2019.Pages
 
         public void OnGetKamen(string s)
         {
-            Servisak.Kontrola(s);
             dice = Servisak.vem();
+            
+            Servisak.Kontrola(s);
+            
         }
 
         public IndexModel(Service servisak)
@@ -27,7 +29,7 @@ namespace weby2019.Pages
         }
         public void OnGet()
         {
-            Servisak.Start();
+
             dice = Servisak.vem();
         }
 

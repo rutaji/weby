@@ -13,7 +13,13 @@
     @for (int y = 1; y != Model.dice.pocetpismen; y++)
     {
         <span>-</span>
+        
     }
+
+    <span>@Model.dice.hadane[2]</span>
+    <span>@Model.dice.uhodnute[1]</span>
+
+
     <a asp-page="/Index" asp-page-handler="Kamen" asp-route-s=š> zde pro š</a>
     <a asp-page="/Index" asp-page-handler="Kamen" asp-route-s=e> zde pro e</a>
 </body>
