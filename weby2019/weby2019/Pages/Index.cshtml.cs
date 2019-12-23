@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using weby2019.service;
 using weby2019.data;
+using System.ComponentModel.DataAnnotations;
 
 namespace weby2019.Pages
 {
@@ -15,21 +16,35 @@ namespace weby2019.Pages
 
         public  lednička dice { get; set; }
 
-        public void OnGetKamen(string s)
+        public IActionResult OnPost()
         {
+            //this.Input = Input;
+            if (ModelState.IsValid)
+            {
+               
+                Servisak.Kontrola(Input.pismeno);
+
+            }
             dice = Servisak.vem();
-            
-            Servisak.Kontrola(s);
-            
+            return Page();
         }
 
         public IndexModel(Service servisak)
         {
             Servisak = servisak;
         }
+        [BindProperty]
+        public InputModel Input { get; set; }
+
+        public class InputModel
+        {
+            [Required]
+            [Display(Name = "Jméno")]
+            public string pismeno { get; set; }
+        }
         public void OnGet()
         {
-
+            Input = new InputModel();
             dice = Servisak.vem();
         }
 
