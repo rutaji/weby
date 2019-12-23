@@ -18,7 +18,6 @@ namespace weby2019.Pages
 
         public IActionResult OnPost()
         {
-            //this.Input = Input;
             if (ModelState.IsValid)
             {
                
@@ -39,7 +38,7 @@ namespace weby2019.Pages
         public class InputModel
         {
             [Required]
-            [Display(Name = "Jméno")]
+            [StringLength(1)]
             public string pismeno { get; set; }
         }
         public void OnGet()

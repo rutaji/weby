@@ -19,14 +19,32 @@ namespace weby2019.service
         }
         public void  Kontrola(string pismenko)
         {
-
-            for( int i = 1; i <= dice.pocetpismen; i++ )
+            bool f = true;
+            for(int y = 1; true; y++)
             {
-                if( pismenko == dice.hadane[i])
+                if (dice.zkoušene[y] == null)
                 {
-                    dice.uhodnute[i] = pismenko;
+                    
+                    dice.zkoušene[y] = pismenko;
+                    for (int i = 1; i <= dice.pocetpismen; i++)
+                    {
+                        if (pismenko == dice.hadane[i])
+                        {
+                            dice.uhodnute[i] = pismenko;
+                            f = false;
+                        }
+                    }
+                    if (f) { dice.početchyb++; }
+                    break;
                 }
+                if (dice.zkoušene[y] == pismenko)
+                {
+                    break;
+                }
+ 
             }
+
+          
            // return dice;
         }
         public lednička vem()

@@ -21,6 +21,7 @@
             <span>-</span>
         }
     }
+
     <p></p>
     <form method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -31,7 +32,40 @@
         <button type="submit" class="btn btn-primary my-1">Submit</button>
     </form>
     <p></p>
+    <p>zkoušeliste :</p>
+    @for (int s = 1; Model.dice.zkoušene[s] != null; s++)
+    {
+        <span>@Model.dice.zkoušene[s]</span>
+    }
+    @if (Model.dice.početchyb == 0)
+    {
+        <img src="~/0.xcf" />
+    }
+    @if (Model.dice.početchyb == 1)
+    {
+        <img src="~/1.xcf" />
+    }
+    @if (Model.dice.početchyb == 2)
+    {
+        <img src="~/2.xcf" />
+    }
+    @if (Model.dice.početchyb == 3)
+    {
+        <img src="~/3.xcf" />
+    }
+    @if (Model.dice.početchyb == 4)
+    {
+        <img src="~/4.xcf" />
+    }
+    @if (Model.dice.početchyb == 5)
+    {
+        <img src="~/5.xcf" />
+    }
+    @if (Model.dice.početchyb == 6)
+    {
+        <img src="~/6.xcf" />
+    }
 
-    
+
 </body>
 </html>

@@ -10,7 +10,10 @@ namespace weby2019.data
     {
         public string[] hadane = new string[40];
         public string[] uhodnute = new string[40];
+        public string[] zkoušene = new string[200];
         public int pocetpismen;
+        public int početchyb = 0;
+        
 
         public lednička()
         {
