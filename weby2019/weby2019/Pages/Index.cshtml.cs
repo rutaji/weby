@@ -45,6 +45,8 @@ namespace weby2019.Pages
         {
             Input = new InputModel();
             dice = Servisak.vem();
+            Servisak.Start();
+
         }
 
     }

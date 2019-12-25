@@ -18,19 +18,7 @@ namespace weby2019.data
         
         public lednička()
         {
-            var db = new MainDbContext();
-
-            foreach (var s in db.Slova.ToList())
-            {
-                if (s.Id == 3)
-                {
-                    string input = s.Name;//todo vem z databaze 
-
-                    hadane = Regex.Split(input, string.Empty);
-
-                    pocetpismen = (hadane.Length - 1);
-                }
-            }
+            
         }
     }
 }
