@@ -10,13 +10,13 @@ namespace weby2019.service
     public class Service
     {
         public lednička dice = new lednička();
-        public void Start()//TODO tady vytáhnuto to slovo z databáze
+       /* public void Start()//TODO tady vytáhnuto to slovo z databáze
         {
            /* if ( dice.hadane == dice.uhodnute | dice.hadane[1] == null)
             {
                 
-            }*/
-        }
+            }
+        }*/
         public void  Kontrola(string pismenko)
         {
             bool f = true;
