@@ -12,31 +12,36 @@ namespace weby2019.service
     {
         public Random r = new Random();
         public lednička dice = new lednička();
-        public void Start()//TODO tady vytáhnuto to slovo z databáze
+
+        public void Start()
         {
              //if ( dice.hadane == dice.uhodnute | dice.hadane[1] == null)
              //{
             var db = new MainDbContext();
+            int p = db.Slova.Count();
+            dice.vyhra = false;
+            dice.prohra = false;            
             dice.početchyb = 0;
             Array.Clear(dice.uhodnute, 0, dice.uhodnute.Length);
             Array.Clear(dice.zkoušene, 0, dice.zkoušene.Length);
-            int i = r.Next(50);
+            dice.id = r.Next(p + 1) ;
             foreach (var s in db.Slova.ToList())
-                 {
-                     if (s.Id == i)
-                     {
-                         string input = s.Name;//todo vem z databaze 
-
-                         dice.hadane = Regex.Split(input, string.Empty);
-
-                         dice.pocetpismen = (dice.hadane.Length - 1);
-                     }
-                 }
+            {
+               if (s.Id == dice.id)
+               {
+                    string input = s.Name;//todo vem z databaze 
+                    dice.hadane = Regex.Split(input, string.Empty);
+                    dice.skore = s.skore;
+                    dice.pocetpismen = (dice.hadane.Length - 1);
+                     break;
+               }
+             }
              //}
             ;
         }
         public void  Kontrola(string pismenko)
         {
+            //samotmá kontrola
             bool f = true;
             for(int y = 1; true; y++)
             {
@@ -61,9 +66,30 @@ namespace weby2019.service
                 }
  
             }
+            //kontrola vítěství/prohry
+            
+            if (dice.početchyb == 6) { dice.prohra = true; }
+            int t = 1;
+            dice.vyhra = true;
+            while(t < dice.pocetpismen)
+            {
+                if (dice.uhodnute[t] != dice.hadane[t]) { dice.vyhra = false; }
+                t++;
+            }
+            if (dice.vyhra)
+            {
+                if (dice.skore > dice.početchyb)
+                {
+                    var db = new MainDbContext();
+                    foreach (var s in db.Slova.ToList())
+                    {
+                        if(s.Id == dice.id) { s.skore = dice.početchyb;
+                            db.SaveChanges();
+                        }
 
-          
-           // return dice;
+                    }
+                }
+            }
         }
         public lednička vem()
         {

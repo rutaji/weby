@@ -10,64 +10,77 @@
     <title>Oběšenec</title>
 </head>
 <body>
-    <div class="row justify-content-center">
+    <div class="col-lg-3 col-md-5 col-sm-6" style="margin-top: 20px">
+        @for (int y = 1; y != Model.dice.pocetpismen; y++)
+        {
+            if (Model.dice.uhodnute[y] != null)
+            {
+                <span>@Model.dice.uhodnute[y]</span>
+            }
+            else
+            {
+                <span>-</span>
+            }
+        }
+        <br>
+        @if (Model.dice.vyhra){
+        <p> vyhrál jsi </p>
+        <p>Tvůj počet chyb je @Model.dice.početchyb </p>
+        <p>rekordní počet chyb je @Model.dice.skore </p>
+        }
+        @if (Model.dice.prohra)
+        {
+            <h1>prohrál jsi </h1>
+        }
+        @if (Model.dice.vyhra == false & Model.dice.prohra == false)
+        {
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.pismeno"></label>
+                    <input asp-for="Input.pismeno" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary my-1">Submit</button>
+            </form>
+        }
+        <button><a asp-page="/Index" asp-page-handler="Kamen" asp-route-id=""> nový</a></button>
+        <p>zkoušeliste :</p>
+        @for (int s = 1; Model.dice.zkoušene[s] != null; s++)
+        {
+            <span>@Model.dice.zkoušene[s]</span>
+        }
 
+        <br>
+
+        @if (Model.dice.početchyb == 0)
+        {
+            <img src="~/0.png" />
+        }
+        @if (Model.dice.početchyb == 1)
+        {
+            <img src="~/1.png" />
+        }
+        @if (Model.dice.početchyb == 2)
+        {
+            <img src="~/2.png" />
+        }
+        @if (Model.dice.početchyb == 3)
+        {
+            <img src="~/3.png" />
+        }
+        @if (Model.dice.početchyb == 4)
+        {
+            <img src="~/4.png" />
+        }
+        @if (Model.dice.početchyb == 5)
+        {
+            <img src="~/5.png" />
+        }
+        @if (Model.dice.početchyb == 6)
+        {
+            <img src="~/6.png" />
+        }
     </div>
-    @for (int y = 1; y != Model.dice.pocetpismen; y++)
-    {
-        if (Model.dice.uhodnute[y] != null)
-        {
-            <span>@Model.dice.uhodnute[y]</span>
-        }
-        else
-        {
-            <h3>-</h3>
-        }
-    }
-
-    <p></p>
-    <form method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <input asp-for="Input.pismeno" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-primary my-1">Submit</button>
-    </form>
-    <p></p>
-    <p>zkoušeliste :</p>
-    @for (int s = 1; Model.dice.zkoušene[s] != null; s++)
-    {
-        <span>@Model.dice.zkoušene[s]</span>
-    }
-    @if (Model.dice.početchyb == 0)
-    {
-        <img src="~/0.png" />
-    }
-    @if (Model.dice.početchyb == 1)
-    {
-        <img src="~/1.png" />
-    }
-    @if (Model.dice.početchyb == 2)
-    {
-        <img src="~/2.png" />
-    }
-    @if (Model.dice.početchyb == 3)
-    {
-        <img src="~/3.png" />
-    }
-    @if (Model.dice.početchyb == 4)
-    {
-        <img src="~/4.png" />
-    }
-    @if (Model.dice.početchyb == 5)
-    {
-        <img src="~/5.png" />
-    }
-    @if (Model.dice.početchyb == 6)
-    {
-        <img src="~/6.png" />
-    }
-
 
 </body>
 </html>

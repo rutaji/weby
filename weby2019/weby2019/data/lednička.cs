@@ -14,7 +14,10 @@ namespace weby2019.data
         public string[] zkoušene = new string[200];
         public int pocetpismen;
         public int početchyb = 0;
-
+        public int id;
+        public int skore;
+        public bool vyhra ;
+        public bool prohra;
         
         public lednička()
         {

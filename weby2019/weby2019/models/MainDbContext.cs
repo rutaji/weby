@@ -56,7 +56,6 @@ namespace weby2019.models
             modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 34, Name = "házet", skore = 6 });
             modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 35, Name = "kopat", skore = 6 });
             modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 36, Name = "hotel", skore = 6 });
-
             modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 37, Name = "pole", skore = 6 });
             modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 38, Name = "užovka", skore = 6 });
             modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 39, Name = "hora", skore = 6 });
@@ -69,6 +68,7 @@ namespace weby2019.models
             modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 46, Name = "slimák", skore = 6 });
             modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 47, Name = "pes", skore = 6 });
             modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 48, Name = "hák", skore = 6 });
+            modelBuilder.Entity<Slovo>().HasData(new Slovo { Id = 49, Name = "mák", skore = 6 });
         }
 
     }

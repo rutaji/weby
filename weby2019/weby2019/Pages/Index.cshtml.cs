@@ -16,6 +16,12 @@ namespace weby2019.Pages
 
         public  lednička dice { get; set; }
 
+        public void OnGetKamen()
+        {
+            Servisak.Start();
+            dice = Servisak.vem();
+        }
+
         public IActionResult OnPost()
         {
             if (ModelState.IsValid)
